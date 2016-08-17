@@ -1,11 +1,9 @@
 $(document).ready(function() {
 
-
-    function populateOptions(category, parentElement) {
-        for (var i = 0; i < category.length; i++) {
-            var option = '<option>' + category[i].name + '</option>'
-            $(parentElement).append(option);
-        }
+        function populateOptions(category, parentElement) {
+	category.forEach(function(option){
+	    $(parentElement).append('<option>' + option.name + '</option>');
+	})
     }
 
     populateOptions(hotels, '#hotel-choices');
@@ -13,5 +11,13 @@ $(document).ready(function() {
     populateOptions(activities, '#activity-choices');
 
 
+    function buttonSelectors(category, parentElement, button, targetElement) {
+        $(button).on('click', function() {
+            var selected = $(parentElement).val();
+            var item = $('<span>' + selected + '</span>');
+            console.log(item);
+        })
+    }
+    buttonSelectors(hotels, '#hotel-choices', '#select-hotel', "test");
 
 });
