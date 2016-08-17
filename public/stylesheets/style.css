@@ -54,7 +54,7 @@ body {
       width: inherit; } }
 
 #control-panel {
-  padding: 0;
+  padding: 0;"btn btn-xs btn-danger remove btn-circle"
   box-sizing: border-box; }
   #control-panel > div {
     margin: 20px 0;
