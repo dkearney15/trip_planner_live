@@ -23,13 +23,13 @@
             <h4>Restaurants</h4>
             <select data-type="restaurant" id="restaurant-choices">
             </select>
-            <button data-action="add" class="btn btn-primary btn-circle pull-right">+</button>
+            <button id="select-restaurant" data-action="add" class="btn btn-primary btn-circle pull-right">+</button>
           </div>
           <div>
             <h4>Activities</h4>
             <select data-type="activity" id="activity-choices">
             </select>
-            <button data-action="add" class="btn btn-primary btn-circle pull-right">+</button>
+            <button id="select-activity" data-action="add" class="btn btn-primary btn-circle pull-right">+</button>
           </div>
         </div>
       </div>
@@ -53,30 +53,19 @@
         <div class="panel-body" id="itinerary">
           <div>
             <h4>My Hotel</h4>
-            <ul class="list-group">
-              <div class="itinerary-item">
-                <span class="title"></span>
-                <button class="btn btn-xs btn-danger remove btn-circle">x</button>
-              </div>
-            </ul>
+            <ul id="hotel-list" class="list-group">
+              
+	                  </ul>
           </div>
           <div>
             <h4>My Restaurants</h4>
-            <ul class="list-group">
-              <div class="itinerary-item">
-                <span class="title">Bouley</span>
-                <button class="btn btn-xs btn-danger remove btn-circle">x</button>
-              </div>
-            </ul>
+            <ul id="restaurant-list" class="list-group">
+                          </ul>
           </div>
           <div>
             <h4>My Activities</h4>
-            <ul class="list-group">
-              <div class="itinerary-item">
-                <span class="title">Mahayana Buddhist Temple Association</span>
-                <button class="btn btn-xs btn-danger remove btn-circle">x</button>
-              </div>
-            </ul>
+            <ul id="activity-list" class="list-group">
+               </ul>
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-        function populateOptions(category, parentElement) {
-	category.forEach(function(option){
-	    $(parentElement).append('<option>' + option.name + '</option>');
-	})
+    function populateOptions(category, parentElement) {
+        category.forEach(function(option) {
+            $(parentElement).append('<option>' + option.name + '</option>');
+        })
     }
 
     populateOptions(hotels, '#hotel-choices');
@@ -11,13 +11,24 @@ $(document).ready(function() {
     populateOptions(activities, '#activity-choices');
 
 
-    function buttonSelectors(category, parentElement, button, targetElement) {
+    function buttonSelectors(parentElement, button, targetElement) {
         $(button).on('click', function() {
-            var selected = $(parentElement).val();
-            var item = $('<span>' + selected + '</span>');
-            console.log(item);
-        })
+            var id = $(parentElement).val();
+	    
+            console.log("ID:", id);
+            var div = $('<div id=' + id + '></div>');
+            var li = $('<li>' + id + '</li>');
+            var button = $('<button id=' + id + ' class = "btn btn-xs btn-danger remove btn-circle" > x < /button>');
+            $(targetElement).append(div);
+            $(div).append(li);
+            $(div).append(button);
+        });
     }
-    buttonSelectors(hotels, '#hotel-choices', '#select-hotel', "test");
+
+    buttonSelectors('#hotel-choices', '#select-hotel', '#hotel-list' );
+    buttonSelectors('#restaurant-choices', '#select-restaurant', "#restaurant-list");
+    buttonSelectors('#activity-choices', '#select-activity', '#activity-list');
+
+
 
 });
